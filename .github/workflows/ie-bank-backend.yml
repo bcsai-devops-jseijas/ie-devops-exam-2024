@@ -1,0 +1,60 @@
+name: 'Backend CI/CD'
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'backend/**'
+      - '.github/workflows/ie-bank-backend.yml'
+
+env:
+  SAMPLE_VARIABLE: #value
+
+jobs:
+  build:
+    
+    runs-on: ubuntu-latest
+    env:
+      ENV: #value
+
+    steps:
+      # Exercise IV
+      # GitHub action: Write step to checkout code.
+
+      # Exercise IV
+      # GitHub action: Write step to set up Python 3.11.
+
+      # Exercise IV
+      # GitHub action: Write step to upgrade Python pip. Consider using the `working-directory: ./backend` setting
+    
+      # Exercise IV
+      # GitHub action: Write step to install dependencies with pip. Consider using the `working-directory: ./backend` setting
+
+      # Exercise IV
+      # GitHub action: Write step to install flake8 and pytest, and use flake8 to check code syntax. Consider using the `working-directory: ./backend` setting
+
+      # Exercise IV
+      # GitHub action: Write step to run python tests with pytest. Consider using the `working-directory: ./backend` setting
+    
+      # Exercise IV
+      # GitHub action: Write step to login in to Azure Container Registry.
+      
+      # Exercise IV
+      # GitHub action: Write step to set your docker image version
+
+      #Exercise IV
+      # GitHub action: Write step to build and push your Docker image into the Container Registry
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    environment:
+      name: 'Development'
+
+    steps:
+      # Exercise IV
+      # GitHub action: Write step to login in to Azure.
+
+      # Exercise IV
+      # GitHub action: Write step to set up the published container image for your Azure container web app
+    

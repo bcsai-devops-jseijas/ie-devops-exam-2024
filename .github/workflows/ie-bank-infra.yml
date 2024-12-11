@@ -1,0 +1,38 @@
+name: 'Infra CI/CD'
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'infra/**'
+      - '.github/workflows/ie-bank-infra.yml'
+
+env:
+  RESOURCE_GROUP_DEV: BCSAI2024-DEVOPS-STUDENTS-B-DEV
+  SUBSCRIPTION_ID_DEV: e0b9cada-61bc-4b5a-bd7a-52c606726b3b
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # Exercise I
+      # GitHub action: Write step to checkout code
+
+      # Exercise I
+      # GitHub action: Write step to linter main.bicep
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    environment:
+      name: 'Development'
+
+    steps:
+      # Exercise II
+      # GitHub action: Write step to checkout code
+    
+      # Exercise II
+      # GitHub action: Write step to login in to Azure. You can use the repository secret AZURE_CREDENTIALS
+
+      # Exercise II
+      # GitHub action: Write step to deploy the infrastructure
